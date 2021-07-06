@@ -3,9 +3,12 @@ import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 import Home from "../../routes/Home/Home.js";
-import Slides from "../../routes/Slides/Slides.js";
 import NP1 from "../../routes/NP1/NP1.js";
-import PhenotypicData from "../../routes/PhenotypicData/PhenotypicData.js"
+import About from "../../routes/About/About.js";
+import Contact from "../../routes/Contact/Contact.js";
+import PhenotypicData from "../../routes/PhenotypicData/PhenotypicData.js";
+import Slides from "../../routes/Slides/Slides.js";
+
 
 class Navigation extends React.Component {
     constructor(props){
@@ -46,11 +49,11 @@ class Navigation extends React.Component {
                       <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="nav-list">
                               <li className="nav-item"><NavLink to="/">Home</NavLink></li>
-                              <li className="nav-item"><NavLink to="/about">About</NavLink></li>
-                              <li className="nav-item"><NavLink to="/slides">Microscopic Slides</NavLink></li>
                               <li className="nav-item"><NavLink to="/np1">NP1</NavLink></li>
-                              <li className="nav-item"><NavLink to="/phenotypicData">PhenotypicData</NavLink></li>
+                              <li className="nav-item"><NavLink to="/about">About</NavLink></li>
                               <li className="nav-item"><NavLink to="/contact">Contact</NavLink></li>
+                              <li className="nav-item"><NavLink to="/phenotypicData">PhenotypicData</NavLink></li>
+                              <li className="nav-item"><NavLink to="/slides">Microscopic Slides</NavLink></li>
                           </ul>
                       </div>
                   </div>
