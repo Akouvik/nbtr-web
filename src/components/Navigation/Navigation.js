@@ -48,10 +48,10 @@ class Navigation extends React.Component {
                       </button>
                       <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="nav-list">
-                              <li className="nav-item"><NavLink to="/">Home</NavLink></li>
                               <li className="nav-item"><NavLink to="/np1">NP1</NavLink></li>
                               <li className="nav-item"><NavLink to="/about">About</NavLink></li>
                               <li className="nav-item"><NavLink to="/contact">Contact</NavLink></li>
+                              <li className="nav-item"><NavLink to="/">Home</NavLink></li>
                               <li className="nav-item"><NavLink to="/phenotypicData">PhenotypicData</NavLink></li>
                               <li className="nav-item"><NavLink to="/slides">Microscopic Slides</NavLink></li>
                           </ul>

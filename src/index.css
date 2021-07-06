@@ -4018,7 +4018,8 @@ input[type=button].btn-block {
 }
 .nav-list{
     list-style: none;
-    margin-left: 95vh;
+    margin-left: 70vh;
+    margin-top: 20vh;
 }
 .navbar-text {
   display: inline-block;
