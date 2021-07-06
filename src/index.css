@@ -4016,7 +4016,10 @@ input[type=button].btn-block {
   position: static;
   float: none;
 }
-
+.nav-list{
+  list-style: none;
+  margin: 0;
+}
 .navbar-text {
   display: inline-block;
   padding-top: 0.5rem;
@@ -10139,9 +10142,9 @@ img::-moz-selection {
   color: #343a40;
 }
 #mainNav .navbar-nav > li.nav-item > a {
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 3px;
+  /*font-size: 12px;*/
+  /*font-weight: 800;*/
+  /*letter-spacing: 3px;*/
   text-transform: uppercase;
 }
 #mainNav .navbar-nav > li.nav-item > a:hover{
@@ -10418,7 +10421,7 @@ header.masthead .post-heading .meta a {
 }
  #navbarResponsive{
   position: relative;
-  left: 25rem;
+  left: 15vh;
 }
 
 
@@ -10428,10 +10431,10 @@ header.masthead .post-heading .meta a {
 }
 
 #msNamelogo{
-   font-size: 4vh;
-   position: relative;
-   right: 15rem;
-   color: #fff;
+  font-size: 4vh;
+  position: relative;
+  right: 15vh;
+  color: #fff;
 }
 /*#msNamelogo:hover{*/
 /*  color: #f7c458;*/
