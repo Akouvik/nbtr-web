@@ -9,73 +9,88 @@ const SlideFormsandInputs = () =>{
         <form className="slideform" onSubmit={handleSubmit} >
             <div className="mx-auto">
              <div>
-                <h3> Subnum: </h3>  <br/>
+                <h4> Subnum: </h4>
                 <input type="text" placeholder="Subnum" name="subnum" />
              </div>
              
             <div>
-                <h3> Age </h3>  <br/>
+                <h4> Age </h4>
                 <input type="number" placeholder="Min Age" /> <input type="number" placeholder="Max Age" />
             </div>
 
             <div>
-                <h3> Sex </h3>  <br/>
-                    <input type="checkbox" /> Male 
-                    <input type="checkbox" /> Female 
-                    <input type="checkbox" /> Both 
+                <h4> Sex </h4>
+                <ul>
+                    <li> <input type="checkbox" /> Male </li>
+                    <li> <input type="checkbox" /> Female </li>
+                    <li> <input type="checkbox" /> Both </li>
+                </ul>
             </div>
             
             <div>
-                <h3>Race</h3>  <br/>
-                   Asian <input type="checkbox" />
-                   Black <input type="checkbox" />
-                    Hispanic <input type="checkbox" />
-                    White <input type="checkbox" />
-                    Other <input type="checkbox" />
-                    Unknown <input type="checkbox" />
+                <h4>Race</h4>
+                <ul>
+                    <li>Asian <input type="checkbox" /></li>
+                   <li> Black <input type="checkbox" /></li>
+                    <li> Hispanic <input type="checkbox" /></li>
+                     <li>White <input type="checkbox" /></li>
+                    <li> Other <input type="checkbox" /></li>
+                    <li> Unknown <input type="checkbox" /></li>
+                </ul>
             </div>
             
             <div>        
-                <h3>Brain Region</h3> <br/>
-                    Amygdala <input type="checkbox" />
-                   Basal Ganglia <input type="checkbox" />
-                    Basal Nucleus of Myenert <input type="checkbox" />
-                    Calcarine Cortex <input type="checkbox" />
-                    Caudal Hippocampus <input type="checkbox" />
-                    Cerebellum <input type="checkbox" />
-                    Cingulate Gyrus <input type="checkbox" />
-                    Inferior Parietal Lobule <input type="checkbox" />
-                    Medulla <input type="checkbox" />
-                    Midbrain <input type="checkbox" />
-                    Middle Frontal Gyrus <input type="checkbox" />
-                    Orbital Frontal Cortex <input type="checkbox" />
-                    Pons <input type="checkbox" />
-                    Rostral Hippocampus <input type="checkbox" />
-                    Superior Temporal <input type="checkbox" />
-                    Thalamus and Basal Ganglia <input type="checkbox" />
+                <h4>Brain Region</h4>
+                <div className="col-lg-6 ">
+                <ul>
+                    <li> Amygdala <input type="checkbox" /> </li>
+                    <li> Basal Ganglia <input type="checkbox" /> </li>
+                    <li>  Basal Nucleus of Myenert <input type="checkbox" /></li>
+                    <li>  Calcarine Cortex <input type="checkbox" /></li>
+                    <li>  Caudal Hippocampus <input type="checkbox" /></li>
+                    <li>  Cerebellum <input type="checkbox" /></li>
+                    <li>  Cingulate Gyrus <input type="checkbox" /></li>
+                    <li>  Inferior Parietal Lobule <input type="checkbox" /></li>
+                </ul>
+                </div>
+                
+                <div className="col-lg-6">
+                    <ul>
+                        <li> Medulla <input type="checkbox" /></li>
+                        <li> Midbrain <input type="checkbox" /></li>
+                        <li> Middle Frontal Gyrus <input type="checkbox" /></li>
+                        <li> Orbital Frontal Cortex <input type="checkbox" /></li>
+                        <li>  Pons <input type="checkbox" /></li>
+                        <li>  Rostral Hippocampus <input type="checkbox" /></li>
+                        <li> Superior Temporal <input type="checkbox" /></li>
+                        <li> Thalamus and Basal Ganglia <input type="checkbox" /></li>
+                    </ul>
+                </div>
             </div>
             
             
             <div>
-                <h3>Stain</h3>  <br/>
-                    Amyloid Beta <input type="checkbox" />
-                    Congo Red <input type="checkbox" />
-                    GFAP <input type="checkbox" />
-                    H&E <input type="checkbox" />
-                    Holzer's <input type="checkbox" />
-                    LFB <input type="checkbox" />
-                    LFB-CV <input type="checkbox" />
-                    LFB-PAS <input type="checkbox" />
-                    Modified Beilschowski <input type="checkbox" />
-                    Other <input type="checkbox" />
-                    Perl's Fe <input type="checkbox" />
-                    SV40-IHC <input type="checkbox" />
-                    Synuclein <input type="checkbox" />
-                    Tau <input type="checkbox" />
-                    TDP-43<input type="checkbox" />
-                    TG3<input type="checkbox" />
-                    Thioflavin S <input type="checkbox" />
-                    Ubiquitin <input type="checkbox" />
+                <h4>Stain</h4>
+                <ul>
+                    <li> Amyloid Beta <input type="checkbox" /></li>
+                    <li> Congo Red <input type="checkbox" /></li>
+                    <li> GFAP <input type="checkbox" /></li>
+                    <li> H&E <input type="checkbox" /></li>
+                    <li> Holzers <input type="checkbox" /></li>
+                    <li> LFB <input type="checkbox" /></li>
+                    <li> LFB-CV <input type="checkbox" /></li>
+                    <li> LFB-PAS <input type="checkbox" /></li>
+                     <li>Modified Beilschowski <input type="checkbox" /></li>
+                    <li> Other <input type="checkbox" /></li>
+                     <li>Perls Fe <input type="checkbox" /></li>
+                   <li>  SV40-IHC <input type="checkbox" /></li>
+                    <li> Synuclein <input type="checkbox" /></li>
+                    <li> Tau <input type="checkbox" /></li>
+                    <li> TDP-43<input type="checkbox" /></li>
+                     <li>TG3<input type="checkbox" /></li>
+                     <li>Thioflavin S <input type="checkbox" /></li>
+                    <li> Ubiquitin <input type="checkbox" /></li>
+                    </ul>
             </div>
             
             <input type="Submit" class="btn btn-primary submitbtn" id="submitQueryinput"/>
