@@ -2,31 +2,34 @@ import React from 'react';
 import useForm from 'react-hook-form';
 
 const SlideFormsandInputs = () =>{
+    function handleSubmit (e){
+        e.preventDefault()
+    }
     return (
-        <form className="px-5 py-3 slideform" >
+        <form className="px-5 py-3 slideform" onSubmit={handleSubmit} >
             <div className="col-md-7 mx-auto">
              <div>
-                <label> Subnum: </label> 
+                <label> Subnum: </label>  <br/>
                 <input type="text" placeholder="Subnum" name="subnum" />
              </div>
             <div>
-                <label> Min Age:</label> 
+                <label> Min Age:</label>  <br/>
                 <input type="number" placeholder="Age" />
             </div>
             <div>
-            <label> Max Age:</label> 
+            <label> Max Age:</label>  <br/>
                 <input type="number" placeholder="Max Age" />
             </div>
 
             <div>
-                <label> Sex: </label>
+                <label> Sex: </label>  <br/>
                     <input type="checkbox" /> Male 
                     <input type="checkbox" /> Female 
                     <input type="checkbox" /> Both 
             </div>
             
             <div>
-                <label>Race:</label>
+                <label>Race:</label>  <br/>
                     <input type="checkbox" />Asian
                     <input type="checkbox" />Black
                     <input type="checkbox" />Hispanic
@@ -35,8 +38,8 @@ const SlideFormsandInputs = () =>{
                     <input type="checkbox" />Unknown
             </div>
             <div>        
-                <label>Brain Region:</label>
-                    <input type="checkbox" />Amygdala
+                <label>Brain Region:</label> <br/>
+                    Amygdala <input type="checkbox" />
                     <input type="checkbox" />Basal Ganglia
                     <input type="checkbox" />Basal Nucleus of Myenert
                     <input type="checkbox" />Calcarine Cortex
@@ -54,28 +57,28 @@ const SlideFormsandInputs = () =>{
                     <input type="checkbox" />Thalamus and Basal Ganglia
             </div>
             <div>
-                <label>Stain:</label>
-                    <input type="checkbox" />Amyloid Beta
-                    <input type="checkbox" />Congo Red
-                    <input type="checkbox" />GFAP
-                    <input type="checkbox" />H&E
-                    <input type="checkbox" />Holzer's
-                    <input type="checkbox" />LFB
-                    <input type="checkbox" />LFB-CV
-                    <input type="checkbox" />LFB-PAS
-                    <input type="checkbox" />Modified Beilschowski
-                    <input type="checkbox" />Other
-                    <input type="checkbox" />Perl's Fe
-                    <input type="checkbox" />SV40-IHC
-                    <input type="checkbox" />Synuclein
-                    <input type="checkbox" />Tau
+                <label>Stain:</label>  <br/>
+                    Amyloid Beta <input type="checkbox" />
+                    Congo Red <input type="checkbox" />
+                    GFAP <input type="checkbox" />
+                    H&E <input type="checkbox" />
+                    Holzer's <input type="checkbox" />
+                    LFB <input type="checkbox" />
+                    LFB-CV <input type="checkbox" />
+                    LFB-PAS <input type="checkbox" />
+                    Modified Beilschowski <input type="checkbox" />
+                    Other <input type="checkbox" />
+                    Perl's Fe <input type="checkbox" />
+                    SV40-IHC <input type="checkbox" />
+                    Synuclein <input type="checkbox" />
+                    Tau <input type="checkbox" />
                     <input type="checkbox" />TDP-43
                     <input type="checkbox" />TG3
                     <input type="checkbox" />Thioflavin S
                     <input type="checkbox" />Ubiquitin
             </div>
             
-            <input type="Submit" class="btn btn-primary submitbtn" id="submitQueryinput"/>Submit
+            <input type="Submit" class="btn btn-primary submitbtn" id="submitQueryinput"/>
             </div>
             
            
