@@ -11,15 +11,6 @@ const  leftSideStain = ["Amyloid Beta","Congo Red","GFAP","H&E","Holzers","LFB",
 const  rightSideStain = ["Modified Beilschowski","Perls Fe","SV40-IHC","Synuclein","Tau","TDP-43","TG3","Thioflavin","Ubiquitin","Other"]
 
 
-// let halfLengthRegion = Math.ceil(Region.length / 2);    
-// let leftSideRegion = halfLengthRegion.splice(0,halfLengthRegion);
-// let rightSideRegion = halfLengthRegion.splice(-halfLengthRegion)
-
-
-// let halfLengthStain = Math.ceil(Stain.length / 2);    
-// let leftSideStain = halfLengthStain.slice(0,halfLengthStain);
-// let rightSideStain = leftSideStain.slice(-halfLengthStain);
-
 const SlideFormsandInputs = () =>{
     
     const [checkboxState, setCheckboxState] = useState([])
@@ -137,6 +128,8 @@ const SlideFormsandInputs = () =>{
                         </div>
                     </div>
                 </div> 
+                <input type="Submit" class="btn btn-primary submitbtn" id="submitQueryinput"/>
+
             </form>
     </div>
         )
