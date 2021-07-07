@@ -17,7 +17,7 @@ const SlideFormsandInputs = () =>{
     
     return (
         <div>
-            <form className="slideform" onSubmit={handleSubmit} >
+            <form className="slideform">
                 <div  className="row">
                      <div className="col">
                         <h4> Subnum: </h4>
@@ -35,7 +35,7 @@ const SlideFormsandInputs = () =>{
                     <div className="col">
                         <h4> Sex </h4>
                          <ul className="sex">
-                            {Selections.Sex.map((sex,index) => {
+                            {Sex.map((sex,index) => {
                                 return (
                                 <li key={index}>
                                     <label htmlFor={`custom-checkbox-${index}`}>{sex}</label>
