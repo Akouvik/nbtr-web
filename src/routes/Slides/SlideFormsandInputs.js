@@ -42,11 +42,7 @@ const SlideFormsandInputs = () =>{
                             {Sex.map((sex,index) => {
                                 return (
                                 <li key={index}>
-                                    <label htmlFor={`custom-checkbox-${index}`}>{sex}</label>
-                                    <div>
-                                    <input type="checkbox" id={`custom-checkbox-${index}`} name={sex} value={sex}/>
-                                    </div>
-                                
+\                                    <label htmlFor={`custom-checkbox-${index}`}>{sex}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={sex} value={sex}/>
                                 </li>
                                 )
                             })}
