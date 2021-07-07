@@ -1,6 +1,10 @@
 import { React, useState } from 'react';
 import useForm from 'react-hook-form';
-import  Sex  from "../../utils/Sex"
+// import  Sex  from "../../utils/Sex"
+
+
+const  Sex = ["Male","Female","Both"]
+
 
 const SlideFormsandInputs = () =>{
     
@@ -26,7 +30,7 @@ const SlideFormsandInputs = () =>{
                      
                     <div className="col">
                         <h4> Age </h4>
-                        <input type="number" placeholder="Min Age" /> <input type="number" placeholder="Max Age" />
+                        <input type="number" placeholder="Min Age" /> :<input type="number" placeholder="Max Age" />
                     </div>
                 </div>
                 
