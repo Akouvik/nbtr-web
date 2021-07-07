@@ -8,6 +8,14 @@ const  Race = ["Asian","Black","Hispanic","White", "Other","Unknown"];
 const  Region = ["Amygdala"," Basal Ganglia","Basal Nucleus of Myenert","Calcarine Cortex","Caudal Hippocampus","Cerebellum","Cingulate Gyrus","Inferior Parietal Lobule","Medulla","Midbrain","Middle Frontal Gyrus","Orbital Frontal Cortex","Pons","Rostral Hippocampus","Superior Temporal","Thalamus and Basal Ganglia"]
 const  Stain = ["Amyloid Beta","Congo Red","GFAP","H&E","Holzers","LFB","LFB-CV","LFB-PAS","Modified Beilschowski","Perls Fe","SV40-IHC","Synuclein","Tau","TDP-43","TG3","Thioflavin","Ubiquitin","Other"]
 
+let halfLengthRegion = Math.ceil(Region.length / 2);    
+let leftSideRegion = halfLengthRegion.splice(0,halfLengthRegion);
+let rightSideRegion = halfLengthRegion.splice(halfLengthRegion, Region.length)
+
+
+let halfLengthStain = Math.ceil(Stain.length / 2);    
+let leftSideStain = halfLengthStain.splice(0,halfLengthStain);
+let rightSideStain = leftSideStain.splice(leftSideStain, Stain.length)
 const SlideFormsandInputs = () =>{
     
     const [checkboxState, setCheckboxState] = useState([])
@@ -21,14 +29,7 @@ const SlideFormsandInputs = () =>{
     let region = []
     let stain = []
     
-    let halfLengthRegion = Math.ceil(Region.length / 2);    
-    let leftSideRegion = halfLengthRegion.splice(0,halfLengthRegion);
-    let rightSideRegion = halfLengthRegion.splice(halfLengthRegion, Region.length)
-    
-    
-    let halfLengthStain = Math.ceil(Stain.length / 2);    
-    let leftSideStain = halfLengthStain.splice(0,halfLengthStain);
-    let rightSideStain = leftSideStain.splice(leftSideStain, Stain.length)
+   
     
     return (
         <div>
@@ -79,10 +80,10 @@ const SlideFormsandInputs = () =>{
                     <h5> Brain Region</h5>
                     <div className="col">
                          <ul className="region">
-                            {halfLengthRegion.map((firstSideRegion,index) => {
+                            {halfLengthRegion.map((region,index) => {
                                 return (
                                 <li key={index}>
-                                   <label htmlFor={`custom-checkbox-${index}`}>{firstSideRegion}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={firstSideRegion} value={firstSideRegion}/>
+                                   <label htmlFor={`custom-checkbox-${index}`}>{region}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region}/>
                                 </li>
                                 )
                             })}
@@ -103,7 +104,35 @@ const SlideFormsandInputs = () =>{
                         </div>
                     </div>
                 </div> 
- 
+                
+               <div className="row">
+                    <h5> Slide Stain </h5>
+                    <div className="col">
+                         <ul className="stain">
+                            {leftSideStain.map((stain,index) => {
+                                return (
+                                <li key={index}>
+                                   <label htmlFor={`custom-checkbox-${index}`}>{stain}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={stain} value={stain}/>
+                                </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    
+                    <div className="col">
+                        <div>
+                            <ul className="stain">
+                            {rightSideStain.map((stain,index) =>{
+                                return(
+                                <li key={index}>
+                                <label htmlFor={`custom-checkbox-${index}`}>{stain}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={stain} value={stain} />
+                                </li>
+                                )
+                            })}
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
             </form>
     </div>
         )
