@@ -5,4 +5,4 @@
 //     Stain:["Amyloid Beta","Congo Red","GFAP","H&E","Holzers","LFB","LFB-CV","LFB-PAS","Modified Beilschowski","Perls Fe","SV40-IHC","Synuclein","Tau","TDP-43","TG3","Thioflavin","Ubiquitin","Other"]
 // }
 
- export const  Sex = ["Male","Female","Both"]
+//  export Sex = ["Male","Female","Both"]
