@@ -10,12 +10,13 @@ const  Stain = ["Amyloid Beta","Congo Red","GFAP","H&E","Holzers","LFB","LFB-CV"
 
 let halfLengthRegion = Math.ceil(Region.length / 2);    
 let leftSideRegion = halfLengthRegion.splice(0,halfLengthRegion);
-let rightSideRegion = halfLengthRegion.splice(halfLengthRegion, Region.length)
+let rightSideRegion = halfLengthRegion.splice(-halfLengthRegion)
 
 
 let halfLengthStain = Math.ceil(Stain.length / 2);    
-let leftSideStain = halfLengthStain.splice(0,halfLengthStain);
-let rightSideStain = leftSideStain.splice(leftSideStain, Stain.length)
+let leftSideStain = halfLengthStain.slice(0,halfLengthStain);
+let rightSideStain = leftSideStain.slice(-halfLengthStain);
+
 const SlideFormsandInputs = () =>{
     
     const [checkboxState, setCheckboxState] = useState([])
