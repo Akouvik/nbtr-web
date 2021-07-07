@@ -5,17 +5,20 @@ import useForm from 'react-hook-form';
 
 const  Sex = ["Male","Female","Both"];
 const  Race = ["Asian","Black","Hispanic","White", "Other","Unknown"];
-const  Region = ["Amygdala"," Basal Ganglia","Basal Nucleus of Myenert","Calcarine Cortex","Caudal Hippocampus","Cerebellum","Cingulate Gyrus","Inferior Parietal Lobule","Medulla","Midbrain","Middle Frontal Gyrus","Orbital Frontal Cortex","Pons","Rostral Hippocampus","Superior Temporal","Thalamus and Basal Ganglia"]
-const  Stain = ["Amyloid Beta","Congo Red","GFAP","H&E","Holzers","LFB","LFB-CV","LFB-PAS","Modified Beilschowski","Perls Fe","SV40-IHC","Synuclein","Tau","TDP-43","TG3","Thioflavin","Ubiquitin","Other"]
-
-let halfLengthRegion = Math.ceil(Region.length / 2);    
-let leftSideRegion = halfLengthRegion.splice(0,halfLengthRegion);
-let rightSideRegion = halfLengthRegion.splice(-halfLengthRegion)
+const  leftSideRegion = ["Amygdala"," Basal Ganglia","Basal Nucleus of Myenert","Calcarine Cortex","Caudal Hippocampus","Cerebellum","Cingulate Gyrus","Inferior Parietal Lobule"]
+const  rightSideRegion = ["Medulla","Midbrain","Middle Frontal Gyrus","Orbital Frontal Cortex","Pons","Rostral Hippocampus","Superior Temporal","Thalamus and Basal Ganglia"]
+const  leftSideStain = ["Amyloid Beta","Congo Red","GFAP","H&E","Holzers","LFB","LFB-CV","LFB-PAS"]
+const  rightSideStain = ["Modified Beilschowski","Perls Fe","SV40-IHC","Synuclein","Tau","TDP-43","TG3","Thioflavin","Ubiquitin","Other"]
 
 
-let halfLengthStain = Math.ceil(Stain.length / 2);    
-let leftSideStain = halfLengthStain.slice(0,halfLengthStain);
-let rightSideStain = leftSideStain.slice(-halfLengthStain);
+// let halfLengthRegion = Math.ceil(Region.length / 2);    
+// let leftSideRegion = halfLengthRegion.splice(0,halfLengthRegion);
+// let rightSideRegion = halfLengthRegion.splice(-halfLengthRegion)
+
+
+// let halfLengthStain = Math.ceil(Stain.length / 2);    
+// let leftSideStain = halfLengthStain.slice(0,halfLengthStain);
+// let rightSideStain = leftSideStain.slice(-halfLengthStain);
 
 const SlideFormsandInputs = () =>{
     
@@ -81,7 +84,7 @@ const SlideFormsandInputs = () =>{
                     <h5> Brain Region</h5>
                     <div className="col">
                          <ul className="region">
-                            {halfLengthRegion.map((region,index) => {
+                            {leftSideRegion.map((region,index) => {
                                 return (
                                 <li key={index}>
                                    <label htmlFor={`custom-checkbox-${index}`}>{region}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region}/>
