@@ -79,10 +79,10 @@ const SlideFormsandInputs = () =>{
                     <h5> Brain Region</h5>
                     <div className="col">
                          <ul className="region">
-                            {halfLengthRegion.map((region,index) => {
+                            {halfLengthRegion.map((firstSideRegion,index) => {
                                 return (
                                 <li key={index}>
-                                   <label htmlFor={`custom-checkbox-${index}`}>{region}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region}/>
+                                   <label htmlFor={`custom-checkbox-${index}`}>{firstSideRegion}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={firstSideRegion} value={firstSideRegion}/>
                                 </li>
                                 )
                             })}
@@ -103,35 +103,7 @@ const SlideFormsandInputs = () =>{
                         </div>
                     </div>
                 </div> 
-                
-               <div className="row">
-                    <h5> Slide Stain </h5>
-                    <div className="col">
-                         <ul className="stain">
-                            {leftSideStain.map((stain,index) => {
-                                return (
-                                <li key={index}>
-                                   <label htmlFor={`custom-checkbox-${index}`}>{stain}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={stain} value={stain}/>
-                                </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    
-                    <div className="col">
-                        <div>
-                            <ul className="stain">
-                            {rightSideStain.map((stain,index) =>{
-                                return(
-                                <li key={index}>
-                                <label htmlFor={`custom-checkbox-${index}`}>{stain}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={stain} value={stain} />
-                                </li>
-                                )
-                            })}
-                            </ul>
-                        </div>
-                    </div>
-                </div> 
+ 
             </form>
     </div>
         )
