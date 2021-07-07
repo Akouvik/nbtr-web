@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import useForm from 'react-hook-form';
-import { Selections } from "../../utils/Selections"
+import  Selections  from "../../utils/Selections"
 
 const SlideFormsandInputs = () =>{
     const [checkboxState, setCheckboxState] = useState([])
