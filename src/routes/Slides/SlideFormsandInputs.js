@@ -24,6 +24,7 @@ const SlideFormsandInputs = () =>{
     // }
     
     function handleChange(attr){
+        console.log("hey")
         console.log(attr)
     }
     
@@ -74,7 +75,8 @@ const SlideFormsandInputs = () =>{
                             {Race.map((race,index) =>{
                                 return(
                                 <li key={index}>
-                                <label htmlFor={`custom-checkbox-${index}`}>{race}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} onChange = {()=>handleChange(this.name)} />
+                                <label htmlFor={`custom-checkbox-${index}`}>{race}</label>
+                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} onChange = {()=>handleChange(this.name)} />
                                 </li>
                                 )
                             })}
@@ -89,7 +91,8 @@ const SlideFormsandInputs = () =>{
                             {leftSideRegion.map((region,index) => {
                                 return (
                                 <li key={index}>
-                                   <label htmlFor={`custom-checkbox-${index}`}>{region}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region}/>
+                                   <label htmlFor={`custom-checkbox-${index}`}>{region}</label>
+                                   <input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region}/>
                                 </li>
                                 )
                             })}
@@ -102,7 +105,8 @@ const SlideFormsandInputs = () =>{
                             {rightSideRegion.map((region,index) =>{
                                 return(
                                 <li key={index}>
-                                <label htmlFor={`custom-checkbox-${index}`}>{region}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region} />
+                                <label htmlFor={`custom-checkbox-${index}`}>{region}</label>
+                                <input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region} />
                                 </li>
                                 )
                             })}
