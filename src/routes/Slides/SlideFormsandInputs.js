@@ -23,9 +23,9 @@ const SlideFormsandInputs = () =>{
     //     e.preventDefault()
     // }
     
-    function handleChange(attr){
-        console.log("hey")
-        console.log(attr)
+    function handleChange(e){
+        console.log("hey", e.target.name)
+        // console.log(attr)
     }
     
     
@@ -61,7 +61,8 @@ const SlideFormsandInputs = () =>{
                             {Sex.map((sex,index) => {
                                 return (
                                 <li key={index}>
-                                   <label htmlFor={`custom-checkbox-${index}`}>{sex}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={sex} value={sex}/>
+                                   <label htmlFor={`custom-checkbox-${index}`}>{sex}</label>
+                                   <input type="checkbox" id={`custom-checkbox-${index}`} name={sex} value={sex} onChange={()=>handleChange(name)} />
                                 </li>
                                 )
                             })}
@@ -76,7 +77,7 @@ const SlideFormsandInputs = () =>{
                                 return(
                                 <li key={index}>
                                 <label htmlFor={`custom-checkbox-${index}`}>{race}</label>
-                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} onChange = {()=>handleChange(this.name)} />
+                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} onChange = {()=>handleChange()} />
                                 </li>
                                 )
                             })}
@@ -122,7 +123,8 @@ const SlideFormsandInputs = () =>{
                             {leftSideStain.map((stain,index) => {
                                 return (
                                 <li key={index}>
-                                   <label htmlFor={`custom-checkbox-${index}`}>{stain}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={stain} value={stain}/>
+                                   <label htmlFor={`custom-checkbox-${index}`}>{stain}</label>
+                                   <input type="checkbox" id={`custom-checkbox-${index}`} name={stain} value={stain}/>
                                 </li>
                                 )
                             })}
