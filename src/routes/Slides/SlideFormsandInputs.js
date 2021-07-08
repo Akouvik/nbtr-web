@@ -62,7 +62,7 @@ const SlideFormsandInputs = () =>{
                                 return (
                                 <li key={index}>
                                    <label htmlFor={`custom-checkbox-${index}`}>{sex}</label>
-                                   <input type="checkbox" id={`custom-checkbox-${index}`} name={sex} value={sex} onChange={()=>handleChange(name)} />
+                                   <input type="checkbox" id={`custom-checkbox-${index}`} name={sex} value={sex} onChange={()=>handleChange(sex)} />
                                 </li>
                                 )
                             })}
@@ -77,7 +77,7 @@ const SlideFormsandInputs = () =>{
                                 return(
                                 <li key={index}>
                                 <label htmlFor={`custom-checkbox-${index}`}>{race}</label>
-                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} onChange = {()=>handleChange()} />
+                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} onChange = {()=>handleChange(race)} />
                                 </li>
                                 )
                             })}
