@@ -13,11 +13,22 @@ const  rightSideStain = ["Modified Beilschowski","Perls Fe","SV40-IHC","Synuclei
 
 const SlideFormsandInputs = () =>{
     
-    const [checkboxState, setCheckboxState] = useState([])
+    const [checkboxSex, setCheckboxSex] = useState([])
+    const [checkboxRace, setCheckboxRace] = useState([])
+    const [checkboxRegion, setCheckboxRegion] = useState([])
+    const [checkboxStain, setCheckboxStain] = useState([])
+
     
     // function handleSubmit (e){
     //     e.preventDefault()
     // }
+    
+    function handleChange(attr){
+        console.log(attr)
+    }
+    
+    
+    
     let subnum, minAge,maxAge;
     let sex = []
     let race=[]
@@ -63,7 +74,7 @@ const SlideFormsandInputs = () =>{
                             {Race.map((race,index) =>{
                                 return(
                                 <li key={index}>
-                                <label htmlFor={`custom-checkbox-${index}`}>{race}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} />
+                                <label htmlFor={`custom-checkbox-${index}`}>{race}</label><input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} onChange = {()=>handleChange(this.name)} />
                                 </li>
                                 )
                             })}
