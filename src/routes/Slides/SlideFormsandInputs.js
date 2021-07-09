@@ -19,11 +19,11 @@ const  rightSideStain = ["Modified Beilschowski","Perls Fe","SV40-IHC","Synuclei
 
 const SlideFormsandInputs = () =>{
 
-    const [sexCheckedState, setSexCheckedState] = useState(new Array(Sex.length()).fill(false))
+    const [sexCheckedState, setSexCheckedState] = useState(new Array(Sex.length).fill(false))
     const [raceCheckedState, setRaceCheckedState] = useState(new Array(Race.length).fill(false))
     
-    const [leftRegionCheckedState, setLeftRegionCheckedState] = useState(new Array(leftSideRegion.length()).fill(false))
-    const [rightRegionCheckedState, setRightRegionCheckedState] = useState(new Array(rightSideRegion.length()).fill(false))
+    const [leftRegionCheckedState, setLeftRegionCheckedState] = useState(new Array(leftSideRegion.length).fill(false))
+    const [rightRegionCheckedState, setRightRegionCheckedState] = useState(new Array(rightSideRegion.length).fill(false))
     
     const [leftStainCheckedState, setLeftStainCheckedState] = useState(new Array(leftSideStain.length).fill(false))
     const [rightStainCheckedState, setRightStainCheckedState] = useState(new Array(rightSideStain.length).fill(false))
