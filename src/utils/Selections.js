@@ -8,3 +8,15 @@
                     //     <h4> Subnum: </h4>
                     //     <input type="text" placeholder="Subnum" name="subnum" />
                     //  </div>
+                    
+                    
+                    
+                      "devDependencies": {
+    "webpack": "^5.43.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+  
+  
+  
+      "watch": "webpack-dev-server --progress"
