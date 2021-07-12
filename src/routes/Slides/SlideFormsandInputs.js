@@ -46,9 +46,10 @@ const SlideFormsandInputs = () =>{
             const updatedCheckedState = raceCheckedState.map((race,index) =>
              index === position ? !race : race
         )
+        
+        console.log("first ",raceCheckedState)
         setRaceCheckedState(updatedCheckedState)
-
-        console.log(raceCheckedState)
+        console.log("Second ",raceCheckedState)
     }
     
     function handleLeftRegionChange(position){
