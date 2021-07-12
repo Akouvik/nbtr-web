@@ -11,10 +11,10 @@ const  rightSideRegion = ["Medulla","Midbrain","Middle Frontal Gyrus","Orbital F
 const  leftSideStain = ["Amyloid Beta","Congo Red","GFAP","H&E","Holzers","LFB","LFB-CV","LFB-PAS"]
 const  rightSideStain = ["Modified Beilschowski","Perls Fe","SV40-IHC","Synuclein","Tau","TDP-43","TG3","Thioflavin","Ubiquitin","Other"]
 
- export  const Selections = ["Male","Female","Both","Asian","Black","Hispanic","White", "Other","Unknown","Amygdala"," Basal Ganglia","Basal Nucleus of Myenert",
- "Calcarine Cortex","Caudal Hippocampus","Cerebellum","Cingulate Gyrus","Inferior Parietal Lobule","Medulla","Midbrain","Middle Frontal Gyrus","Orbital Frontal Cortex",
- "Pons","Rostral Hippocampus","Superior Temporal","Thalamus and Basal Ganglia","Amyloid Beta","Congo Red","GFAP","H&E","Holzers","LFB","LFB-CV","LFB-PAS","Modified Beilschowski",
- "Perls Fe","SV40-IHC","Synuclein","Tau","TDP-43","TG3","Thioflavin","Ubiquitin","Other"]
+//  export  const Selections = ["Male","Female","Both","Asian","Black","Hispanic","White", "Other","Unknown","Amygdala"," Basal Ganglia","Basal Nucleus of Myenert",
+//  "Calcarine Cortex","Caudal Hippocampus","Cerebellum","Cingulate Gyrus","Inferior Parietal Lobule","Medulla","Midbrain","Middle Frontal Gyrus","Orbital Frontal Cortex",
+//  "Pons","Rostral Hippocampus","Superior Temporal","Thalamus and Basal Ganglia","Amyloid Beta","Congo Red","GFAP","H&E","Holzers","LFB","LFB-CV","LFB-PAS","Modified Beilschowski",
+//  "Perls Fe","SV40-IHC","Synuclein","Tau","TDP-43","TG3","Thioflavin","Ubiquitin","Other"]
 
 
 const SlideFormsandInputs = () =>{
@@ -41,36 +41,45 @@ const SlideFormsandInputs = () =>{
     }
     
     
-    // function handleRaceChange(position){
-    //         const updateCheckedState = raceCheckedState.map((race,index) =>
-    //          index === position ? !race : race
-    //     )
-    //     setSexCheckedState(updateCheckedState)
+    function handleRaceChange(position){
+            const updatedCheckedState = raceCheckedState.map((race,index) =>
+             index === position ? !race : race
+        )
+        setRaceCheckedState(updatedCheckedState)
 
-    // }
+    }
     
-    // function handleRegionChange(){
-    //          const updateCheckedState = leftRegionCheckedState.map((leftRegion,index) =>
-    //          index === position ? !region : region
-    //     )
-    //     setSexCheckedState(updateCheckedState)
-    // }
+    function handleLeftRegionChange(position){
+             const updatedCheckedState = leftRegionCheckedState.map((leftRegion,index) =>
+             index === position ? !region : region
+        )
+        setLeftRegionCheckedState(updatedCheckedState)
+    }
     
        
-    // function handleRegionChange(){
-    //          const updateCheckedState = sexCheckedState.map((rightRegion,index) =>
-    //          index === position ? !region : region
-    //     )
-    //     setSexCheckedState(updateCheckedState)
-    // }
+    function handleRightRegionChange(position){
+             const updatedCheckedState = rightRegionCheckedState.map((rightRegion,index) =>
+             index === position ? !region : region
+        )
+        setRightRegionCheckedState(updatedCheckedState)
+    }
     
     
-    // function handleStainChange(){
-    //          const updateCheckedState = sexCheckedState.map((race,index) =>
-    //          index === position ? !race : race
-    //     )
-    //     setSexCheckedState(updateCheckedState)
-    // }
+    function handleLeftStainChange(position){
+             const updatedCheckedState = leftStainCheckedState.map((race,index) =>
+             index === position ? !race : race
+        )
+        setLeftStainCheckedState(updatedCheckedState)
+    }
+    
+    
+       
+    function handleRightStainChange(position){
+             const updatedCheckedState = rightStainCheckedState.map((race,index) =>
+             index === position ? !race : race
+        )
+        setRightStainCheckedState(updatedCheckedState)
+    }
     
     
     
@@ -115,7 +124,7 @@ const SlideFormsandInputs = () =>{
                                 return(
                                 <li key={index}>
                                 <label htmlFor={`custom-checkbox-${index}`}>{race}</label>
-                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} onChange = {()=>handleRaceChange(race)} />
+                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} checked = {raceCheckedState[index]} onChange = {()=>handleRaceChange(index)} />
                                 </li>
                                 )
                             })}
@@ -131,7 +140,7 @@ const SlideFormsandInputs = () =>{
                                 return (
                                 <li key={index}>
                                    <label htmlFor={`custom-checkbox-${index}`}>{region}</label>
-                                   <input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region}/>
+                                   <input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region} checked = {leftRegionCheckedState[index]} onChange = {() => handleLeftRegionChange((index))}/>
                                 </li>
                                 )
                             })}
@@ -145,7 +154,7 @@ const SlideFormsandInputs = () =>{
                                 return(
                                 <li key={index}>
                                 <label htmlFor={`custom-checkbox-${index}`}>{region}</label>
-                                <input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region} />
+                                <input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region} checked = {rightRegionCheckedState[index]} onChange = {()=>handleRightRegionChange(index)}/>
                                 </li>
                                 )
                             })}
