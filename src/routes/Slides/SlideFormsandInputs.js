@@ -19,22 +19,22 @@ const  rightSideStain = ["Modified Beilschowski","Perls Fe","SV40-IHC","Synuclei
 
 const SlideFormsandInputs = () =>{
 
-    const [sexCheckedState, setSexCheckedState] = useState(new Array(Sex.length).fill(false))
-    const [raceCheckedState, setRaceCheckedState] = useState(new Array(Race.length).fill(false))
+    const [sexCheckedState, setSexCheckedState] = useState(new Array(Sex.length).fill({checked:false}))
+    const [raceCheckedState, setRaceCheckedState] = useState(new Array(Race.length).fill({checked:false}))
     
-    const [leftRegionCheckedState, setLeftRegionCheckedState] = useState(new Array(leftSideRegion.length).fill(false))
-    const [rightRegionCheckedState, setRightRegionCheckedState] = useState(new Array(rightSideRegion.length).fill(false))
+    const [leftRegionCheckedState, setLeftRegionCheckedState] = useState(new Array(leftSideRegion.length).fill({checked:false}))
+    const [rightRegionCheckedState, setRightRegionCheckedState] = useState(new Array(rightSideRegion.length).fill({checked:false}))
     
-    const [leftStainCheckedState, setLeftStainCheckedState] = useState(new Array(leftSideStain.length).fill(false))
-    const [rightStainCheckedState, setRightStainCheckedState] = useState(new Array(rightSideStain.length).fill(false))
+    const [leftStainCheckedState, setLeftStainCheckedState] = useState(new Array(leftSideStain.length).fill({checked:false}))
+    const [rightStainCheckedState, setRightStainCheckedState] = useState(new Array(rightSideStain.length).fill({checked:false}))
     
     // function handleSubmit (e){
     //     e.preventDefault()
     // }
-    
+    // If the index does not match with the provided position parameter, then we're not reversing its value but we're just returning the value as it is. if it does match then reverse it
     function handleSexChange(position){
         const updatedCheckedState = sexCheckedState.map((sex,index) =>
-             index === position ? !sex : sex 
+             index.checked === position ? !sex : sex 
         )
         
         setSexCheckedState(updatedCheckedState)
@@ -44,17 +44,16 @@ const SlideFormsandInputs = () =>{
     
     function handleRaceChange(position){
             const updatedCheckedState = raceCheckedState.map((race,index) =>
-             index === position ? !race : race
+             index.checked === position ? !race : race
         )
         
-        console.log("first ",raceCheckedState)
         setRaceCheckedState(updatedCheckedState)
         console.log("Second ",raceCheckedState)
     }
     
     function handleLeftRegionChange(position){
              const updatedCheckedState = leftRegionCheckedState.map((leftRegion,index) =>
-             index === position ? !region : region
+             index.checked === position ? !region : region
         )
         setLeftRegionCheckedState(updatedCheckedState)
     }
@@ -62,7 +61,7 @@ const SlideFormsandInputs = () =>{
        
     function handleRightRegionChange(position){
              const updatedCheckedState = rightRegionCheckedState.map((rightRegion,index) =>
-             index === position ? !region : region
+             index.checked === position ? !region : region
         )
         setRightRegionCheckedState(updatedCheckedState)
     }
@@ -70,7 +69,7 @@ const SlideFormsandInputs = () =>{
     
     function handleLeftStainChange(position){
              const updatedCheckedState = leftStainCheckedState.map((race,index) =>
-             index === position ? !race : race
+             index.checked === position ? !race : race
         )
         setLeftStainCheckedState(updatedCheckedState)
     }
@@ -79,7 +78,7 @@ const SlideFormsandInputs = () =>{
        
     function handleRightStainChange(position){
              const updatedCheckedState = rightStainCheckedState.map((race,index) =>
-             index === position ? !race : race
+             index.checked === position ? !race : race
         )
         setRightStainCheckedState(updatedCheckedState)
     }
