@@ -38,6 +38,7 @@ const SlideFormsandInputs = () =>{
         )
         
         setSexCheckedState(updatedCheckedState)
+        console.log(sexCheckedState)
     }
     
     
@@ -47,6 +48,7 @@ const SlideFormsandInputs = () =>{
         )
         setRaceCheckedState(updatedCheckedState)
 
+        console.log(raceCheckedState)
     }
     
     function handleLeftRegionChange(position){
