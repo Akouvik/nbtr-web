@@ -33,8 +33,8 @@ const SlideFormsandInputs = () =>{
     // }
     // If the index does not match with the provided position parameter, then we're not reversing its value but we're just returning the value as it is. if it does match then reverse it
     function handleSexChange(position){
-        const updatedCheckedState = sexCheckedState.map((sex,index) =>
-             index.checked === position ? !sex : sex 
+        const updatedCheckedState = sexCheckedState.map((item,index) =>
+             index === position ? !item.checked : item.checked 
         )
         
         setSexCheckedState(updatedCheckedState)
@@ -43,8 +43,8 @@ const SlideFormsandInputs = () =>{
     
     
     function handleRaceChange(position){
-            const updatedCheckedState = raceCheckedState.map((race,index) =>
-             index.checked === position ? !race : race
+            const updatedCheckedState = raceCheckedState.map((item,index) =>
+             index === position ? !item.checked : item.checked
         )
         
         setRaceCheckedState(updatedCheckedState)
@@ -52,24 +52,24 @@ const SlideFormsandInputs = () =>{
     }
     
     function handleLeftRegionChange(position){
-             const updatedCheckedState = leftRegionCheckedState.map((leftRegion,index) =>
-             index.checked === position ? !region : region
+             const updatedCheckedState = leftRegionCheckedState.map((item,index) =>
+             index === position ? !item.checked : item.checked
         )
         setLeftRegionCheckedState(updatedCheckedState)
     }
     
        
     function handleRightRegionChange(position){
-             const updatedCheckedState = rightRegionCheckedState.map((rightRegion,index) =>
-             index.checked === position ? !region : region
+             const updatedCheckedState = rightRegionCheckedState.map((item,index) =>
+             index.checked === position ? !item.checked : item.checked
         )
         setRightRegionCheckedState(updatedCheckedState)
     }
     
     
     function handleLeftStainChange(position){
-             const updatedCheckedState = leftStainCheckedState.map((race,index) =>
-             index.checked === position ? !race : race
+             const updatedCheckedState = leftStainCheckedState.map((item,index) =>
+             index.checked === position ? !item.checked : item.checked
         )
         setLeftStainCheckedState(updatedCheckedState)
     }
@@ -77,20 +77,12 @@ const SlideFormsandInputs = () =>{
     
        
     function handleRightStainChange(position){
-             const updatedCheckedState = rightStainCheckedState.map((race,index) =>
-             index.checked === position ? !race : race
+             const updatedCheckedState = rightStainCheckedState.map((item,index) =>
+             index.checked === position ? !item.checked : item.checked
         )
         setRightStainCheckedState(updatedCheckedState)
     }
     
-    
-    
-    let subnum, minAge,maxAge;
-    let sex = []
-    let race=[]
-    let region = []
-    let stain = []
-   
     
     return (
         <div>
@@ -111,7 +103,7 @@ const SlideFormsandInputs = () =>{
                                 return (
                                 <li key={index}>
                                    <label htmlFor={`custom-checkbox-${index}`}>{sex}</label>
-                                   <input type="checkbox" id={`custom-checkbox-${index}`} name="Sex" value={sex} checked={sexCheckedState[index]} onChange={()=>handleSexChange(index)} />
+                                   <input type="checkbox" id={`custom-checkbox-${index}`} name="Sex" value={sex} checked={sexCheckedState[index].checked} onChange={()=>handleSexChange(index)} />
                                 </li>
                                 )
                             })}
@@ -126,7 +118,7 @@ const SlideFormsandInputs = () =>{
                                 return(
                                 <li key={index}>
                                 <label htmlFor={`custom-checkbox-${index}`}>{race}</label>
-                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} checked = {raceCheckedState[index]} onChange = {()=>handleRaceChange(index)} />
+                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} checked = {raceCheckedState[index].checked} onChange = {()=>handleRaceChange(index)} />
                                 </li>
                                 )
                             })}
@@ -142,7 +134,7 @@ const SlideFormsandInputs = () =>{
                                 return (
                                 <li key={index}>
                                    <label htmlFor={`custom-checkbox-${index}`}>{region}</label>
-                                   <input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region} checked = {leftRegionCheckedState[index]} onChange = {() => handleLeftRegionChange((index))}/>
+                                   <input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region} checked = {leftRegionCheckedState[index].checked} onChange = {() => handleLeftRegionChange((index))}/>
                                 </li>
                                 )
                             })}
@@ -156,7 +148,7 @@ const SlideFormsandInputs = () =>{
                                 return(
                                 <li key={index}>
                                 <label htmlFor={`custom-checkbox-${index}`}>{region}</label>
-                                <input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region} checked = {rightRegionCheckedState[index]} onChange = {()=>handleRightRegionChange(index)}/>
+                                <input type="checkbox" id={`custom-checkbox-${index}`} name={region} value={region} checked = {rightRegionCheckedState[index].checked} onChange = {()=>handleRightRegionChange(index)}/>
                                 </li>
                                 )
                             })}
