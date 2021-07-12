@@ -32,10 +32,45 @@ const SlideFormsandInputs = () =>{
     //     e.preventDefault()
     // }
     
-    function handleChange(){
-        // console.log("hey", e.target.name)
-        console.log(sexCheckedState)
+    function handleSexChange(position){
+        const updatedCheckedState = sexCheckedState.map((sex,index) =>
+             index === position ? !sex : sex 
+        )
+        
+        setSexCheckedState(updatedCheckedState)
     }
+    
+    
+    // function handleRaceChange(position){
+    //         const updateCheckedState = raceCheckedState.map((race,index) =>
+    //          index === position ? !race : race
+    //     )
+    //     setSexCheckedState(updateCheckedState)
+
+    // }
+    
+    // function handleRegionChange(){
+    //          const updateCheckedState = leftRegionCheckedState.map((leftRegion,index) =>
+    //          index === position ? !region : region
+    //     )
+    //     setSexCheckedState(updateCheckedState)
+    // }
+    
+       
+    // function handleRegionChange(){
+    //          const updateCheckedState = sexCheckedState.map((rightRegion,index) =>
+    //          index === position ? !region : region
+    //     )
+    //     setSexCheckedState(updateCheckedState)
+    // }
+    
+    
+    // function handleStainChange(){
+    //          const updateCheckedState = sexCheckedState.map((race,index) =>
+    //          index === position ? !race : race
+    //     )
+    //     setSexCheckedState(updateCheckedState)
+    // }
     
     
     
@@ -65,7 +100,7 @@ const SlideFormsandInputs = () =>{
                                 return (
                                 <li key={index}>
                                    <label htmlFor={`custom-checkbox-${index}`}>{sex}</label>
-                                   <input type="checkbox" id={`custom-checkbox-${index}`} name="Sex" value={sex} checked={sexCheckedState[index]} onChange={()=>handleChange()} />
+                                   <input type="checkbox" id={`custom-checkbox-${index}`} name="Sex" value={sex} checked={sexCheckedState[index]} onChange={()=>handleSexChange(index)} />
                                 </li>
                                 )
                             })}
@@ -80,7 +115,7 @@ const SlideFormsandInputs = () =>{
                                 return(
                                 <li key={index}>
                                 <label htmlFor={`custom-checkbox-${index}`}>{race}</label>
-                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} onChange = {()=>handleChange(race)} />
+                                <input type="checkbox" id={`custom-checkbox-${index}`} name={race} value={race} onChange = {()=>handleRaceChange(race)} />
                                 </li>
                                 )
                             })}
