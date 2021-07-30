@@ -10411,15 +10411,6 @@ header.masthead .post-heading .meta a {
 
 }
 
-.sticky-top + .container {
-  padding-top: 60px;
-}
-
-.scrolling{
-  opacity: .83;
-  background-color: #212529 !important;
-  transition: background-color .8s linear;
-}
  #navbarResponsive{
   position: relative;
   left: 50vh;
@@ -10471,11 +10462,35 @@ header.masthead .post-heading .meta a {
   opacity: .6;
   color: white;
 }
+.agediv{
+  margin-bottom: 20px;
+}
 
 .submitbtn{
   text-align: center;
   width: 12rem;
 }
+/* modal */
+.modal-closebtn-div{
+  text-align: end;
+  margin-bottom: 4vh;
+  position: relative;
+  bottom: inherit;
+}
+.modal-close::before{
+    content: 'X'; 
+    color: #8f4c2b;
+    font-size: 20px;
+    /* background-color: #183153; */
+    font-weight: 900;
+    font-family: Arial, sans-serif;
+}
+
+.modal-subtitle{
+  text-align: center;
+  color: #8f4c2b;
+}
+
 /*footer*/
 #footer-tag{
   background-color: #183153;

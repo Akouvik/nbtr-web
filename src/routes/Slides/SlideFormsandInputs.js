@@ -1,64 +1,14 @@
 import { React, useState } from "react";
 import Modal from "react-modal";
-// import useForm from 'react-hook-form';
-// import  Selections  from "../../utils/Selections"
+import  { SectionGroups }  from '../../utils/SectionGroups'
 
-const Sex = ["All", "Male", "Female"];
-const Race = ["All", "Asian", "Black", "Hispanic", "White"];
-const brainRegion = [
-  "All",
-  "Amygdala",
-  "Basal Ganglia",
-  "Basal Nucleus of Myenert",
-  "Calcarine Cortex",
-  "Caudal Hippocampus",
-  "Cerebellum",
-  "Cingulate Gyrus",
-  "Inferior Parietal Lobule",
-  "Medulla",
-  "Midbrain",
-  "Middle Frontal Gyrus",
-  "Orbital Frontal Cortex",
-  "Pons",
-  "Rostral Hippocampus",
-  "Superior Temporal",
-  "Thalamus and Basal Ganglia"
-];
-
-const Stain = [
-  "All",
-  "Amyloid Beta",
-  "Congo Red",
-  "GFAP",
-  "H&E",
-  "Holzers",
-  "LFB",
-  "LFB-CV",
-  "LFB-PAS",
-  "Modified Beilschowski",
-  "Perls Fe",
-  "SV40-IHC",
-  "Synuclein",
-  "Tau",
-  "TDP-43",
-  "TG3",
-  "Thioflavin",
-  "Ubiquitin"
-];
 
 Modal.setAppElement("#root");
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
-  }
-};
 
 const SlideFormsandInputs = () => {
+
+  const {Sex,Race,BrainRegion,Stain} = SectionGroups[0]
+
   const [modalIsOpen, setIsOpen] = useState(false);
 
   let [sexCheckedState, setSexCheckedState] = useState(
@@ -69,7 +19,7 @@ const SlideFormsandInputs = () => {
   );
 
   let [brainRegionCheckedState, setBrainRegionCheckedState] = useState(
-    new Array(brainRegion.length).fill(false)
+    new Array(BrainRegion.length).fill(false)
   );
 
   let [stainCheckedState, setStainCheckedState] = useState(
@@ -81,44 +31,6 @@ const SlideFormsandInputs = () => {
 
   let subtitle;
 
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    // openModal();
-    sexCheckedState = sexCheckedState.filter(
-      (item) => item !== undefined && item !== false
-    );
-    raceCheckedState = raceCheckedState.filter(
-      (item) => item !== undefined && item !== false
-    );
-    brainRegionCheckedState = brainRegionCheckedState.filter(
-      (item) => item !== undefined && item !== false
-    );
-
-    stainCheckedState = stainCheckedState.filter(
-      (item) => item !== undefined && item !== false
-    );
-
-    console.log(
-      sexCheckedState,
-      raceCheckedState,
-      brainRegionCheckedState,
-      stainCheckedState
-    );
-  }
-  // If the index does not match with the provided position parameter, then we're not reversing its value but we're just returning the value as it is. if it does match then reverse it
   function handleSexChange(position) {
     let updatedCheckedState;
     if(position === 0){
@@ -159,17 +71,19 @@ const SlideFormsandInputs = () => {
 
   function handleBrainRegionChange(position) {
     let updatedCheckedState;
-    if(position === 0){
-      updatedCheckedState = new Array(brainRegion.length).fill(!brainRegionCheckedState[0])
-    }else{
-      updatedCheckedState = brainRegionCheckedState.map((item,index)=>{
-        if(index === position){
+    if (position === 0) {
+      updatedCheckedState = new Array(BrainRegion.length).fill(!brainRegionCheckedState[0])
+    } else {
+      updatedCheckedState = brainRegionCheckedState.map((item, index) => {
+        if (index === position) {
           item = !item;
-          if(item === true){
-            return brainRegion[position]
+          if (item === true) {
+            return BrainRegion[position];
           }
+        } else {
+          return item;
         }
-      })
+      });
     }
 
     setBrainRegionCheckedState(updatedCheckedState);
@@ -177,29 +91,61 @@ const SlideFormsandInputs = () => {
 
   function handleStainChange(position) {
     let updatedCheckedState;
-    if(position === 0){
+    if (position === 0) {
       updatedCheckedState = new Array(Stain.length).fill(!stainCheckedState[0])
-    }else{
-       updatedCheckedState = stainCheckedState.map((item, index) => {
-      if (index === position) {
-        item = !item;
-        if (item === true) {
-          return Stain[position];
+    } else {
+      updatedCheckedState = stainCheckedState.map((item, index) => {
+        if (index === position) {
+          item = !item;
+          if (item === true) {
+            return Stain[position];
+          }
+        } else {
+          return item;
         }
-      } else {
-        return item;
-      }
-    });
+      });
     }
-    
     setStainCheckedState(updatedCheckedState);
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    openModal();
+    sexCheckedState = sexCheckedState.filter(
+      (item) => item !== undefined && item !== false
+    );
+    raceCheckedState = raceCheckedState.filter(
+      (item) => item !== undefined && item !== false
+    );
+    brainRegionCheckedState = brainRegionCheckedState.filter(
+      (item) => item !== undefined && item !== false
+    );
+
+    stainCheckedState = stainCheckedState.filter(
+      (item) => item !== undefined && item !== false
+    );
+
+    console.log(
+      sexCheckedState,
+      raceCheckedState,
+      brainRegionCheckedState,
+      stainCheckedState
+    );
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+  // query logic
   return (
     <div>
       <form className="slideform" onSubmit={handleSubmit}>
         <div className="row">
-          <div className="col">
+          <div className="col agediv">
             <h4> Age </h4>
 
             <input
@@ -268,7 +214,7 @@ const SlideFormsandInputs = () => {
           <h5> Brain Region</h5>
           <div className="col">
             <ul className="region">
-              {brainRegion.map((region, index) => {
+              {BrainRegion.map((region, index) => {
                 return (
                   <li key={index}>
                     <label 
@@ -277,8 +223,8 @@ const SlideFormsandInputs = () => {
                     <input
                       type="checkbox"
                       id={`custom-checkbox-${index}`}
-                      name={brainRegion}
-                      value={brainRegion}
+                      name={BrainRegion}
+                      value={BrainRegion}
                       checked={brainRegionCheckedState[index]}
                       onChange={() => handleBrainRegionChange(index)}
                     />
@@ -317,24 +263,26 @@ const SlideFormsandInputs = () => {
           type="Submit"
           className="btn btn-primary submitbtn"
           id="submitQueryinput"
+          onClick = {()=> handleSubmit}
         />
       </form>
       <Modal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        // style={customStyles}
-        contentLabel="Example Modal"
+        // contentLabel="Example Modal"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
+        <h4 
+        className="modal-subtitle" 
+        ref={(_subtitle) => (subtitle = _subtitle)}
+        >Select Files to Download</h4>
+        <div className="modal-closebtn-div">
+        <button
+          className="btn btn-outline-dark modal-close"
+          onClick={closeModal} 
+         ></button>
+         </div>
         <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
+          {/* form lists here */}
         </form>
       </Modal>
     </div>

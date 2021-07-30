@@ -2,24 +2,12 @@ import React, {  useState,useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
-// import Home from "../../routes/Home/Home.js";
-// import NP1 from "../../routes/NP1/NP1.js";
-// import About from "../../routes/About/About.js";
-// import Contact from "../../routes/Contact/Contact.js";
-// import PhenotypicData from "../../routes/PhenotypicData/PhenotypicData.js";
-// import Slides from "../../routes/Slides/Slides.js";
-
 function handleScroll(event) {
     let scrollTop = event.srcElement.body.scrollTop,
         itemTranslate = Math.min(0, scrollTop/3 - 60);
 }
 const Navigation = () => {
-    // handleScroll = () => {
-    //     const isTop = window.scrollY < 500;
-    //     if (isTop !== this.state.isTop){
-    //         this.setState({ isTop });
-    //     }
-    // }
+    
     const [isShrunk,setShrunk] = useState(false);
 
   useEffect(() => {
