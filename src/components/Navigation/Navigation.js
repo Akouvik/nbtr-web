@@ -1,44 +1,59 @@
-import React from 'react';
+import React, {  useState,useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
-import Home from "../../routes/Home/Home.js";
-import NP1 from "../../routes/NP1/NP1.js";
-import About from "../../routes/About/About.js";
-import Contact from "../../routes/Contact/Contact.js";
-import PhenotypicData from "../../routes/PhenotypicData/PhenotypicData.js";
-import Slides from "../../routes/Slides/Slides.js";
+// import Home from "../../routes/Home/Home.js";
+// import NP1 from "../../routes/NP1/NP1.js";
+// import About from "../../routes/About/About.js";
+// import Contact from "../../routes/Contact/Contact.js";
+// import PhenotypicData from "../../routes/PhenotypicData/PhenotypicData.js";
+// import Slides from "../../routes/Slides/Slides.js";
 
+function handleScroll(event) {
+    let scrollTop = event.srcElement.body.scrollTop,
+        itemTranslate = Math.min(0, scrollTop/3 - 60);
+}
+const Navigation = () => {
+    // handleScroll = () => {
+    //     const isTop = window.scrollY < 500;
+    //     if (isTop !== this.state.isTop){
+    //         this.setState({ isTop });
+    //     }
+    // }
+    const [isShrunk,setShrunk] = useState(false);
 
-class Navigation extends React.Component {
-    constructor(props){
-        super(props);
-        
-        this.state = {
-            isTop: true,
-        };
-    
-    }
-    
-    componentDidMount(){
-        document.addEventListener("scroll", this.handleScroll);
-        
-    }
-        
-    componentWillUnmount(){
-        window.removeEventListener('scroll',this.handleScroll)
-    }
-    
-       handleScroll = () => {
-          const isTop = window.scrollY < 200;
-            if (isTop !== this.state.isTop){
-                this.setState({ isTop });
-                }
-            }
+  useEffect(() => {
+    const handler = () => {
+      setShrunk((isShrunk) => {
+        if (
+          !isShrunk &&
+          (document.body.scrollTop > 200 ||
+            document.documentElement.scrollTop > 200)
+        ) {
+          return true;
+        }
 
-    render(){
+        if (
+          isShrunk &&
+          document.body.scrollTop < 4 &&
+          document.documentElement.scrollTop < 4
+        ) {
+          return false;
+        }
+
+        return isShrunk;
+      });
+    };
+
+    // Previous logic.
+  }, []);
+
         return (
-            <div style={{ top: 0 }}  className={this.state.isTop ? 'sticky-top' : 'sticky-top scrolling'} >
+            <div 
+            style={{ top: 0 }} 
+            className =
+            {isShrunk}
+             >
                 <Nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" >
                   <div className="container" >
                       <Navbar.Brand><NavLink to="/" id="msNamelogo">MSNBTR</NavLink></Navbar.Brand>
@@ -49,9 +64,9 @@ class Navigation extends React.Component {
                       <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="nav-list">
                               <li className="nav-item"><NavLink to="/np1">NP1</NavLink></li>
+                              <li className="nav-item"><NavLink to="/">Home</NavLink></li>
                               <li className="nav-item"><NavLink to="/about">About</NavLink></li>
                               <li className="nav-item"><NavLink to="/contact">Contact</NavLink></li>
-                              <li className="nav-item"><NavLink to="/">Home</NavLink></li>
                               <li className="nav-item"><NavLink to="/phenotypicData">PhenotypicData</NavLink></li>
                               <li className="nav-item"><NavLink to="/slides">Microscopic Slides</NavLink></li>
                           </ul>
@@ -60,7 +75,6 @@ class Navigation extends React.Component {
                 </Nav>
             </div>
         );
-    }
  
 }
 

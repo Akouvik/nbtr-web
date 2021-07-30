@@ -120,7 +120,11 @@ const SlideFormsandInputs = () => {
   }
   // If the index does not match with the provided position parameter, then we're not reversing its value but we're just returning the value as it is. if it does match then reverse it
   function handleSexChange(position) {
-    const updatedCheckedState = sexCheckedState.map((item, index) => {
+    let updatedCheckedState;
+    if(position === 0){
+       updatedCheckedState = new Array(Sex.length).fill(!sexCheckedState[0])
+    }else{
+     updatedCheckedState = sexCheckedState.map((item,index) =>{
       if (index === position) {
         item = !item;
         if (item === true) {
@@ -130,19 +134,14 @@ const SlideFormsandInputs = () => {
         return item;
       }
     });
-
+    }
     setSexCheckedState(updatedCheckedState);
   }
 
   function handleRaceChange(position) {
     let updatedCheckedState;
     if (position === 0) {
-      updatedCheckedState = raceCheckedState.map((item, index) => {
-        item = !item;
-        if (item === true) {
-          return Race[index];
-        }
-      });
+      updatedCheckedState = new Array(Race.length).fill(!raceCheckedState[0])
     } else {
       updatedCheckedState = raceCheckedState.map((item, index) => {
         if (index === position) {
@@ -159,23 +158,29 @@ const SlideFormsandInputs = () => {
   }
 
   function handleBrainRegionChange(position) {
-    const updatedCheckedState = brainRegionCheckedState.map((item, index) => {
-      if (index === position) {
-        item = !item;
-        if (item === true) {
-          return brainRegion[position];
+    let updatedCheckedState;
+    if(position === 0){
+      updatedCheckedState = new Array(brainRegion.length).fill(!brainRegionCheckedState[0])
+    }else{
+      updatedCheckedState = brainRegionCheckedState.map((item,index)=>{
+        if(index === position){
+          item = !item;
+          if(item === true){
+            return brainRegion[position]
+          }
         }
-      } else {
-        return item;
-      }
-    });
+      })
+    }
 
     setBrainRegionCheckedState(updatedCheckedState);
-    console.log(updatedCheckedState);
   }
 
   function handleStainChange(position) {
-    const updatedCheckedState = stainCheckedState.map((item, index) => {
+    let updatedCheckedState;
+    if(position === 0){
+      updatedCheckedState = new Array(Stain.length).fill(!stainCheckedState[0])
+    }else{
+       updatedCheckedState = stainCheckedState.map((item, index) => {
       if (index === position) {
         item = !item;
         if (item === true) {
@@ -185,6 +190,8 @@ const SlideFormsandInputs = () => {
         return item;
       }
     });
+    }
+    
     setStainCheckedState(updatedCheckedState);
   }
 
@@ -194,6 +201,7 @@ const SlideFormsandInputs = () => {
         <div className="row">
           <div className="col">
             <h4> Age </h4>
+
             <input
               type="number"
               placeholder="Min Age"
@@ -214,7 +222,9 @@ const SlideFormsandInputs = () => {
               {Sex.map((sex, index) => {
                 return (
                   <li key={index}>
-                    <label htmlFor={`custom-checkbox-${index}`}>{sex}</label>
+                    <label
+                    className="listings"
+                     htmlFor={`custom-checkbox-${index}`}>{sex}</label>
                     <input
                       type="checkbox"
                       id={`custom-checkbox-${index}`}
@@ -236,7 +246,9 @@ const SlideFormsandInputs = () => {
                 {Race.map((race, index) => {
                   return (
                     <li key={index}>
-                      <label htmlFor={`custom-checkbox-${index}`}>{race}</label>
+                      <label 
+                      className="listings"
+                      htmlFor={`custom-checkbox-${index}`}>{race}</label>
                       <input
                         type="checkbox"
                         id={`custom-checkbox-${index}`}
@@ -259,7 +271,9 @@ const SlideFormsandInputs = () => {
               {brainRegion.map((region, index) => {
                 return (
                   <li key={index}>
-                    <label htmlFor={`custom-checkbox-${index}`}>{region}</label>
+                    <label 
+                    className="listings"
+                    htmlFor={`custom-checkbox-${index}`}>{region}</label>
                     <input
                       type="checkbox"
                       id={`custom-checkbox-${index}`}
@@ -282,7 +296,9 @@ const SlideFormsandInputs = () => {
               {Stain.map((stain, index) => {
                 return (
                   <li key={index}>
-                    <label htmlFor={`custom-checkbox-${index}`}>{stain}</label>
+                    <label 
+                    className="listings"
+                    htmlFor={`custom-checkbox-${index}`}>{stain}</label>
                     <input
                       type="checkbox"
                       id={`custom-checkbox-${index}`}

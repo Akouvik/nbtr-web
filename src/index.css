@@ -181,8 +181,9 @@ a {
   background-color: transparent;
 }
 a:hover {
-  color: #004655;
+  color: #8f4c2b;
   text-decoration: underline;
+
 }
 
 a:not([href]):not([class]) {
@@ -3996,6 +3997,9 @@ input[type=button].btn-block {
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
+  position: relative;
+  bottom: 17vh;
+  left: 6vh;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
@@ -10411,10 +10415,6 @@ header.masthead .post-heading .meta a {
   padding-top: 60px;
 }
 
-.sticky-top , #mainNav {
-  height: 3rem;
-}
-
 .scrolling{
   opacity: .83;
   background-color: #212529 !important;
@@ -10422,9 +10422,9 @@ header.masthead .post-heading .meta a {
 }
  #navbarResponsive{
   position: relative;
-  left: 15vh;
+  left: 50vh;
+  bottom: 17vh;
 }
-
 
 /*head */
 .headingsub{
@@ -10437,15 +10437,21 @@ header.masthead .post-heading .meta a {
   right: 15vh;
   color: #fff;
 }
-/*#msNamelogo:hover{*/
-/*  color: #f7c458;*/
-/*}*/
 
+.nav-list,.nav-item a{
+  color:#fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.nav-list,.nav-item a:hover{
+  color: #8f4c2b;
+}
 .col-sm:hover{
   border-right: solid 2px #f7c458;
   opacity: .7;
   cursor: hand;
-  bordr-left: solid 10px #f7c458;
+  border-left: solid 10px #f7c458;
 }
 
 .col-sm:hover a{
@@ -10456,6 +10462,9 @@ header.masthead .post-heading .meta a {
   color: #6c757d;
 }
 
+.listings{
+  padding-right: 2px;
+}
 /*about page*/
 .aboutpage-approval{
   background: #0085a1;
@@ -10463,10 +10472,6 @@ header.masthead .post-heading .meta a {
   color: white;
 }
 
-/*slide page*/
-/*.slideform > div{*/
-/*  text-align:center*/
-/*}*/
 .submitbtn{
   text-align: center;
   width: 12rem;
